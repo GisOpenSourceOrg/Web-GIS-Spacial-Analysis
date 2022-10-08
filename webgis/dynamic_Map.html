@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../lib/leaflet-measure.css">
+    <link rel="stylesheet" href="map.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+   integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+   crossorigin=""/>
+
+   <!-- leaflet measure -->
+   <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+   integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+   crossorigin=""></script>
+   <link href="https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.js"></script>
+  <link rel="stylesheet" href="dynamic_map.css">
+  <!-- Load Leaflet code library - see updates at http://leafletjs.com/download.html -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <!-- turf js cdn -->
+  <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
+  <!-- Load jQuery and PapaParse to read data from a CSV file -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  <title>WebGIS</title>
+
+</head>
+<body>
+  <nav class="navbar">
+    <!-- LOGO -->
+    <div class="logo">WebGis</div>
+    <!-- NAVIGATION MENU -->
+    <ul class="nav-links">
+      <!-- USING CHECKBOX HACK -->
+      <input type="checkbox" id="checkbox_toggle" />
+      <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+      <!-- NAVIGATION MENUS -->
+      <div class="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li class="services">
+          <a href="../Home/index.html">Services</a>
+          <!-- DROPDOWN MENU -->
+          <!-- <ul class="dropdown"> -->
+            <!-- <li><a href="#">Dropdown 1 </a></li>
+            <li><a href="#">Dropdown 2</a></li>
+            <li><a href="#">Dropdown 2</a></li> -->
+          <!-- </ul> -->
+        </li>
+        <!-- <li><a href="#"></a></li> -->
+        <li><a href="#">Contact</a></li>
+      </div>
+    </ul>
+  </nav>
+  <!-- to take file input -->
+  <div id="sidebar">
+    
+  <form id="upload" method="post" enctype="multipart/form-data">
+    <div class="distance">
+      <!-- Insert Buffer -->
+      <label for="fname">INSERT BUFFER</label><br>
+      <input type="text" id="lat" name="fname" placeholder="latitude"> <input type="text" id="long" name="fname" placeholder="longitute"><br><br>
+      <input type="text" id="redi" name="me" placeholder="Enter Radius(km)"><br><br>
+      <input type="submit" value="Add Buffer" onclick="draw_polygon()"> <br><br>
+      <!-- Distanace Button -->
+      <!-- <input type="submit" id="btn" value="Get Distance" onclick="addMarker()"> <label for="distance" id="dis_lb"> dis </label><br> -->
+      <button type="submit" class="print-map" onclick="fullScreen()">View full screen</button> 
+    </div>
+  <span class="btn btn-primary btn-file">
+       Select file <input type="file" class="form-control" id="file" name="files" accept=".csv, .json">
+  </span>  
+  <div>
+  <button class="btn btn-primary" id="upld">Upload</button>
+  </div>
+  </form>
+  
+</div>
+<div id="map">
+</div>
+  
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+    <script src="../lib/leaflet-measure.js"></script>
+    <script src="../lib/leaflet.browser.print.min.js"></script>
+    <script src="dynamic_map.js"></script>
+    <script src="geojson_file_input.js"></script>
+</html>
