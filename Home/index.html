@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+    integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+    integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+    crossorigin=""></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.css" rel="stylesheet">
+     <script src="https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.js"></script>
+     <!-- <script type="text/javascript" src="../leaflet/map.js"></script> -->
+     <link rel="stylesheet" href="../leaflet/map.css">
+    <link rel="stylesheet" href="navStyle.css">
+    <title>WebGis</title>
+</head>
+<body>
+        <nav class="navbar">
+          <!-- LOGO -->
+          <div class="logo">WebGis</div>
+          <!-- NAVIGATION MENU -->
+          <ul class="nav-links">
+            <!-- USING CHECKBOX HACK -->
+            <input type="checkbox" id="checkbox_toggle" />
+            <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+            <!-- NAVIGATION MENUS -->
+            <div class="menu">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li class="services">
+                <a href="#">Services</a>
+                <!-- DROPDOWN MENU -->
+                <ul class="dropdown">
+                  <!-- <li><a href="#">Dropdown 1 </a></li>
+                  <li><a href="#">Dropdown 2</a></li>
+                  <li><a href="#">Dropdown 2</a></li> -->
+                </ul>
+              </li>
+              <!-- <li><a href="#"></a></li> -->
+              <li><a href="#">Contact</a></li>
+            </div>
+          </ul>
+        </nav>
+        <div class="row">
+          <div class="column right" style="background-color:#aaa;">
+            <div id="dropContainer" style=" padding:20px; border:1px solid white;height:100px;">
+              Drop Here
+           </div>
+            <input type="file" name="file" id="file">
+            <div><button type="submit" class="btn">Submit</button></div>
+            
+          </div>
+          <div class="column left" style="background-color:#aaa;">
+            <div id="map"></div>
+          </div>
+        </div>
+       
+    <script src="../leaflet/map.js"></script>
+    <script src="home.js"></script>
+    
+</body>
+</html>
