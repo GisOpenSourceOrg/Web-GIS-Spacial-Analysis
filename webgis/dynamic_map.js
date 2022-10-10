@@ -137,7 +137,8 @@ var mapId = document.getElementById('map');
 function fullScreen() {
   mapId.requestFullscreen();
 }
-
+// leaflet geocoder locaton
+L.Control.geocoder().addTo(map);
 
 // $('.print-map').click(function () {
 //   window.print();
