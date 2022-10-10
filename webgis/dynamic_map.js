@@ -115,7 +115,10 @@ var polygon = L.polygon([
 
 var mum = L.marker([19.183597, 73.024063], {color:"red"}).bindPopup('This is Mumbra City.').addTo(cities);
 
-// print-map
+/* Printing Map  */
+L.control.browserPrint({position: 'bottomleft', 
+title: 'Print ...'
+}).addTo(map);
 
 
 // taking Lat and Long from user's click on map
