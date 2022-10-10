@@ -37,6 +37,15 @@ var greenIcon = L.icon({
 		layers: [osm, cities]
 	});
 /* Leaflet Measure distance*/
+ L.control.measure({ 
+  primaryLengthUnit: 'meters', 
+  secondaryLengthUnit: 'kilometers' ,
+  primaryAreaUnit: 'sqmeters', 
+  secondaryAreaUnit: undefined,
+  activeColor: 'red',
+  completedColor: '#7CFC00'
+ }).addTo(map);
+
 
 	var baseLayers = {
 		'OpenStreetMap': osm,
